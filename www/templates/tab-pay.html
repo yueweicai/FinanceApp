@@ -1,0 +1,48 @@
+<ion-view cache-view="false" hide-nav-bar="true">
+  <ion-header-bar class="bar-positive">
+      <h1 class="title">今日支出</h1>
+  </ion-header-bar>	
+  <ion-content class="has-header">
+    <div class="list">
+		<label class="item item-input">
+	  		<i class="icon ion-calendar"></i>&nbsp;
+	  		<span class="input-label">日期</span>
+	    	<input type="date" style="background:#fff" ng-model="mdate" placeholder="支出日期" id="md">
+		</label>
+		<label class="item item-stacked-label" style="padding:5px;text-align:center">
+			<span id="p-rq" style="font-size:small;color:#f0f0f0">请选择支出日期</span>
+		</label>
+		<label class="item item-input">
+	  		<i class="ion-android-cart"></i>&nbsp;
+	  		<span class="input-label">项目</span>
+	    	<input type="text" ng-model="pay.item" placeholder="支出项目">
+		</label>
+		<label class="item item-stacked-label" style="padding:5px;text-align:center">
+			<span id="p-xm" style="font-size:small;color:#f0f0f0">请输入支出项目</span>
+		</label>
+		<label class="item item-input">
+			<i class="ion-social-yen-outline"></i>&nbsp;
+	  		<span class="input-label">金额</span>
+	    	<input type="number" ng-model="pay.money" placeholder="支出金额">
+		</label>
+		<label class="item item-stacked-label" style="padding:5px;text-align:center">
+			<span id="p-my" style="font-size:small;color:#f0f0f0">请输入支出金额</span>
+		</label>
+		<label class="item item-input item-select" ng-init="showmembers()">
+			<i class="ion-android-contacts"></i> &nbsp; 
+	  		<span class="input-label">成员</span>
+	    	<select ng-model="pay.mid" ng-options="m.id as m.name for m in members">
+		    </select>
+		</label>
+		<label class="item item-stacked-label" style="padding:5px;text-align:center">
+			<span id="p-cy" style="font-size:small;color:#f0f0f0">请选择成员</span>
+		</label>
+		<label style="text-align: center;" class="item item-stacked-label" ng-show="show" ng-style="{color:(flog?'green':'red')}">	
+			<span>{{message}}</span>
+		</label>
+		<div class="padding">
+		<a class="button button-block button-positive" ng-click="addpay()">保存</a>
+		</div>
+	</div>
+  </ion-content>
+</ion-view>

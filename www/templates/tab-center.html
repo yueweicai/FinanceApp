@@ -1,0 +1,32 @@
+<ion-view cache-view="false" hide-nav-bar="true">
+  <ion-header-bar class="bar-positive">
+      <h1 class="title">个人中心</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">昵称</span>
+          <input type="text" style="text-align:center;font-size:large;" placeholder="请输入昵称" ng-model="user.fname">
+        </label>
+        <label class="item item-stacked-label" style="text-align:center;">
+          <span id="rs-nc" style="color:#eee;font-size:small;">请输入由2~5个汉字组成的昵称</span>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">密码</span>
+          <input type="password" style="text-align:center;font-size:large;" placeholder="请输入密码" ng-model="user.password">
+        </label>
+        <label class="item item-stacked-label" style="text-align:center;">
+          <span id="rs-pw" style="color:#eee;font-size:small;">请输入5~8位由数字或字母组成的密码</span>
+        </label>
+        <label ng-show="show" class="item item-input item-stacked-label" style="text-align:center">
+          <span ng-style="{color:(flog?'green':'red')}" style="font-size:large;">{{message}}</span>
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-positive" ng-click="update()">更新</button>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-assertive" ng-click="logout()">退出登录</button>
+      </div>
+  </ion-content>
+</ion-view>

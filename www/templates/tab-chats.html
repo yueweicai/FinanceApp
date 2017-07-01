@@ -1,0 +1,25 @@
+<ion-view cache-view="false" hide-nav-bar="true">
+  <ion-header-bar class="bar-positive">
+      <h1 class="title">成员列表</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" ng-init="getmoneys()">
+    <ion-refresher pulling-text="" on-refresh="refreshTasks()"
+            refreshing-text="数据加载中 ..." refreshing-icon="ion-loading-b">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="m in moneys" type="item-text-wrap" href="#/tab/chats/{{m.id}}" on-hold="showmenu(m.id)">
+        <img ng-src="{{m.pic}}">
+        <h2>{{m.name}}</h2>
+        <p>{{m.money|currency}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item style="text-align:right;" ng-show="showTotal">
+        <span>
+          <strong>合计：</strong>
+          <strong ng-bind="mtotal|currency"></strong>
+        </span>
+      </ion-item>
+      <span class="item" ng-show="showmsg" style="text-align: center;" ng-style="{color:(fg?'green':'red')}">{{msg}}</span>
+    </ion-list>
+  </ion-content>
+</ion-view>

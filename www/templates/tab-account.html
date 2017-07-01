@@ -1,0 +1,24 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+  <ion-header-bar class="bar-positive">
+      <h1 class="title">成员管理</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" ng-init="getmember()">
+    <div class="list">
+    	<label class="item item-stacked-label" ng-click="showMenu()" style="text-align:center">
+    		<img src="{{img}}" style="width:8rem;border-radius:15px"/>
+        <h3 style="color:#eee">点击这里设置头像</h3>
+      </label>
+    	<label class="item item-input" style="padding-top:20px;padding-bottom:20px">
+          <span class="input-label ion-android-people">&nbsp;&nbsp;昵称</span>
+          <input type="text" ng-model="member.name" placeholder="请输入由2~5个汉字组成的昵称">
+          <input type="hidden" ng-model="member.id">
+        </label>
+		<label style="text-align: center;" class="item item-stacked-label" ng-show="show" ng-style="{color:(flog?'green':'red')}">	
+			<span>{{message}}</span>
+		</label>
+		<div class="padding">
+			<a class="button button-block button-positive" ng-click="upload()">保存</a>
+		</div>
+	</div>
+  </ion-content>
+</ion-view>
